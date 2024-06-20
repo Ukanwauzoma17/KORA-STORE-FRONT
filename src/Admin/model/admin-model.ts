@@ -1,12 +1,14 @@
 import {
   Column,
+  HasOne,
   IsEmail,
   Model,
   Table,
   Unique,
 } from "sequelize-typescript";
+import Stores from "../../StoreFront/model/store-front-model";
 
-@Table({ tableName: "Admin" })
+@Table({ tableName: "admin" })
 class Admin extends Model {
   @Column
   declare firstName: string;
@@ -42,6 +44,9 @@ class Admin extends Model {
 
   @Column
   declare preExistingBusiness: boolean;
+
+  @HasOne(() => Stores, "userId")
+  storeByUserId!: Stores;
 
 }
 

@@ -35,3 +35,7 @@ export const findByEmail = async (email: string): Promise<Admin | null> => {
     return sent_URL;
   }
   
+  export const findByUserId = async (userId: number): Promise<Admin | null> => {
+    const user = await Admin.findOne({ where: { id: userId }});
+    return user;
+  };

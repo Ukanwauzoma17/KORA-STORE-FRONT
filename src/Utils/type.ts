@@ -1,4 +1,4 @@
-export type UserAttributes = {
+export type AdminAttributes = {
     id: number;
     firstName: string;
     lastName: string;
@@ -19,6 +19,15 @@ export type UserAttributes = {
     error?: any;
     data?: any;
   };
-  
+  export type BaseExceptionType = {
+    message: string | null;
+    error?: any;
+    code: number;
+  };
+  declare module "express" {
+    interface Request {
+      admin?: AdminAttributes;
+    }
+  }
   export type NodeEnvironment = "development" | "test" | "production";
   
