@@ -3,7 +3,6 @@ import cors from "cors";
 import { Express } from "express";
 
 // Any other import that is from our source code should be imported here
-import authRouter from "../auth/route/router"
 
 export default function (app: Express) {
   app.use(
@@ -15,7 +14,7 @@ export default function (app: Express) {
       credentials: true,
     })
   );
-  app.use("/auth/", authRouter);
+  // app.use();
 
 
  

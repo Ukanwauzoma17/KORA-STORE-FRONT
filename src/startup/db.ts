@@ -2,6 +2,7 @@ import  dotenv  from 'dotenv';
 
 // import "dotenv/config";
 import { Sequelize } from "sequelize-typescript";
+import Admin from '../Admin/model/admin-model';
 
 import { setting } from "../config/db";
 import { NodeEnvironment } from '../Utils/type';
@@ -23,7 +24,7 @@ const connString = `${config.dialect}://${config.username}:${config.password}@${
 
 const sequelize = new Sequelize(connString, {
   models: [
-   
+   Admin
   ],
 });
 
