@@ -7,8 +7,7 @@ const userSchema = Joi.object({
   password: Joi.string().min(6).required(),
   confirmPassword: Joi.any().valid(Joi.ref("password")).required(),
   phoneNumber: Joi.string().trim().min(11).max(11).required(),
-  businessName:Joi.string().trim().required,
-  country:Joi.string().required
+  businessName:Joi.string().trim().required(),
 });
 
 export const validateUser = (user: any) => {

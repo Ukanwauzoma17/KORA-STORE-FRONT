@@ -13,6 +13,12 @@ export type UserAttributes = {
     html?: string;
   };
 
+  export type ApiResponseT = {
+    success: boolean;
+    message: string;
+    error?: any;
+    data?: any;
+  };
   
   export type NodeEnvironment = "development" | "test" | "production";
   
