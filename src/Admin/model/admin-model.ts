@@ -1,11 +1,13 @@
 import {
   Column,
+  HasMany,
   HasOne,
   IsEmail,
   Model,
   Table,
   Unique,
 } from "sequelize-typescript";
+import Products from "../../Products/model/product-model";
 import Stores from "../../StoreFront/model/store-front-model";
 
 @Table({ tableName: "admin" })
@@ -47,6 +49,11 @@ class Admin extends Model {
 
   @HasOne(() => Stores, "userId")
   storeByUserId!: Stores;
+
+  @HasMany(()=> Products,"userId")
+  products!:Products[]
+
+  
 
 }
 

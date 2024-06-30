@@ -5,6 +5,7 @@ import { Express } from "express";
 // Any other import that is from our source code should be imported here
 import authRouter from "../Admin/auth/route/auth-router"
 import storeRouter from "../StoreFront/route/store-router"
+import productRouter from "../Products/route/product-router"
 export default function (app: Express) {
   app.use(
     cors({
@@ -17,6 +18,7 @@ export default function (app: Express) {
   );
   app.use("/auth",authRouter);
   app.use("/store",storeRouter)
+  app.use("/product",productRouter)
 
 
  

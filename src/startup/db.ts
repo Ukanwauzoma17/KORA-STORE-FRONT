@@ -5,6 +5,7 @@ import { Sequelize } from "sequelize-typescript";
 import Admin from '../Admin/model/admin-model';
 
 import { setting } from "../config/db";
+import Products from '../Products/model/product-model';
 import Stores from '../StoreFront/model/store-front-model';
 import Token from '../token/model/token-model';
 import { NodeEnvironment } from '../Utils/type';
@@ -28,7 +29,8 @@ const sequelize = new Sequelize(connString, {
   models: [
    Admin,
    Token,
-   Stores
+   Stores,
+   Products
   ],
 });
 
